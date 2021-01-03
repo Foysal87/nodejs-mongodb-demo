@@ -10,7 +10,7 @@ Also Here, I give a full setup of nodejs and MongoDB. Just follow the instructio
 
 ## Outline
 
-* [Nodejs installation](https://github.com/Foysal87/nodejs-mongodb-demo/new/main?readme=1#nodejs-installation)
+* [Nodejs installation](#nodejs-installation)
 * [Specific version nodejs installation](#specific-version-nodejs-installation)
 * [nodejs setup](#nodejs-setup)
 * [MongoDB installation](#mongodb-installation)

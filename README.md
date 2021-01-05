@@ -6,7 +6,7 @@
 
 As nodejs doesn't give anything with the project, so we need to create everything manually. It is very difficult and time-consuming work.
 So here, i will show you,"How to directly you can get full setup" .
-Also Here, I give a full setup of nodejs and MongoDB. Just follow the instructions.
+Also Here, I give setup instructions of nodejs and MongoDB. Just follow the instructions.
 
 ## Outline
 
@@ -75,7 +75,7 @@ nvm ls-remote
 
 ### Nodejs setup
 
-If you don't want these setup. you can make your own project setup by calling,
+**Ignore this section if you want my demo project as initial**. If you don't want these setup.  you can make your own project setup by calling,
 
 ```
 npm init

@@ -6,3 +6,5 @@ mongoose.connect('mongodb://localhost:27017/test_demodb',
         else {console.log('error in db connection : '+ err); }
 });
 require('./user.model');
+require('./student.model');
+require('./details.model');

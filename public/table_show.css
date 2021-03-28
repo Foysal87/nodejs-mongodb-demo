@@ -1,0 +1,115 @@
+.wrapper2 {
+    position: relative;
+    overflow: hidden;
+    padding:12px 0 1em;
+    width: 100%;
+  }
+  .warpper1{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 10%;
+    background-size: cover;
+  }
+
+/* contest section template*/
+
+
+/* table style*/
+
+#contesttable {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	width:80%;
+    margin: 3em auto;
+    background-size: cover;
+	padding :2em;
+	padding-right: 5em;
+  }
+  
+  #contesttable td, #contesttable th {
+	border: 1px solid rgb(20, 20, 20);
+	padding: 8px;
+	text-align: center;
+	color:rgb(8, 8, 8);
+  }
+  
+  #contesttable th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: rgba(20, 1, 1, 0.959);
+	text-align: center;
+	color: rgb(250, 246, 246);
+  }
+  .tr_past
+{
+	background-color: rgba(240, 236, 236, 0.733);
+}
+.tr_running
+{
+	background-color: rgba(237, 243, 236, 0.897);
+}
+.tr_coming
+{
+	background-color:rgba(255, 235, 205, 0.425)
+}
+  .tab{
+    cursor: pointer;
+    padding:10px 10px;
+    margin:0px 5px;
+    background:rgb(13, 1, 36);
+    display:inline-block;
+    color:rgb(246, 246, 248);
+    border-radius:5px;
+    border-left: 2px solid #f81f02f6;
+    border-bottom: 2px solid #f80202f6;
+    box-shadow: 0 0.5rem 0.8rem #00000080;
+  }
+  .panels{
+    background:#1307007a;
+    box-shadow: 0 2rem 2rem #00000067;
+    width:100%;
+    min-height: 700px;
+    border-radius:3px;
+    overflow:hidden;
+    padding:10px;  
+  }
+  .panel{
+    display:none;
+   
+    animation: fadein .8s;
+  }
+  @keyframes fadein {
+      from {
+          opacity:0;
+      }
+      to {
+          opacity:1;
+      }
+  }
+  .panel-title{
+    font-size:1.5em;
+    font-weight:bold
+  }
+  .radio{
+    display:none;
+  }
+  #one:checked ~ .panels #one-panel,
+  #two:checked ~ .panels #two-panel,
+  #three:checked ~ .panels #three-panel,
+  #four:checked ~ .panels #four-panel
+  {
+    display:block
+  }
+  #one:checked ~ .tabs #one-tab,
+  #two:checked ~ .tabs #two-tab,
+  #three:checked ~ .tabs #three-tab,
+  #four:checked ~ .tabs #four-tab
+  {
+    background:#f81f02f6;
+    color:rgb(10, 10, 10);
+    border-top: 2px solid rgb(248, 247, 247);; 
+    border-right: 2px solid rgb(248, 247, 247);
+  }
+  

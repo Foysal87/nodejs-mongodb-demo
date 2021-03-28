@@ -2,21 +2,26 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="icon" href="../img/favicon.ico">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<title>Home</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<title>Profile</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<link href="register.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/register.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/profile.css" rel="stylesheet" type="text/css" media="all" />
+
 <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-mainbg">
-      <a class="navbar-brand navbar-logo" href="/">DS<strong>I</strong></a>
+        <a class="navbar-brand navbar-logo" href="/profile">DS<strong>I</strong></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-bars text-white"></i>
         </button>
@@ -24,52 +29,57 @@
             <ul class="navbar-nav ml-auto">
                 <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
                 <li class="nav-item active">
-                    <a class="nav-link " href="/"><i class="fas fa-tachometer-alt"></i>Home</a>
+                    <a class="nav-link" href="/profile"><i class="far fa-calendar-alt"></i>profile</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/register"><i class="far fa-copy"></i>SIGN UP</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/login"><i class="far fa-copy"></i>LOGIN</a>
+                    <a class="nav-link" href="profile/logout"><i class="far fa-copy"></i>Logout</a>
                 </li>
             </ul>
         </div>
     </nav>
-
-
     <div class="main-w3layouts wrapper">
-      <div class="main-agileinfo" style="width:80%;">
-       <p class="msg">Welcome Everyone</p>
+        <div class="main-agileinfo">
+            <h1>Update Student in Class <%=student_class%> </h1>
+            <div class="agileits-top">
+                <form id="new_student_create" action="/profile/student_management/<%=username%>/update" method="post" autocomplete="off">
+                    <input class="text" type="hidden" name="student_class" value="<%=student_class%>" >
+                    <input class="text" type="hidden" name="username" value="<%=username%>" >
+                    <label class="lab"> Fullname</label>
+                    <input class="text" type="text" name="fullname" placeholder="Full Name"  value="<%=fullname%>" > <br>
+                    <label class="lab"> Average Marks</label>
+                    <input class="text" type="number" name="avg_marks" placeholder="Average Marks"  value="<%=average_marks%>"> <br>
+                    <label class="lab"> Total teaching Days</label>
+                    <input class="text" type="number" name="total_teaching_days" placeholder="Total Days Taught"  value="<%=taught_days%>"> <br>
+                    <label class="lab"> Total earnings</label>
+                    <input class="text" type="number" name="total_earn" placeholder="Total Earnings" value="<%=earnings%>"><br>
+                    <input type="checkbox" id="math" name="math" value="1">
+                    <label class="lab" for="math"> MATH COURSE</label><br>
+                    <input type="checkbox" id="english" name="english" value="1">
+                    <label class="lab" for="english"> ENGLISH COURSE</label><br>
+                    <input type="checkbox" id="bangla" name="bangla" value="1">
+                    <label class="lab" for="bangla"> BANGLA COURSE</label><br>
+                    <input type="submit" value="ADD"> 
+                </form>
+              
+            </div>
+            </div>
+		<ul class="colorlib-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+        </ul>
+     
+    </div>
 
-   </div>
-      <div class="main-agileinfo">
-        <% if( error_msg!=''){ %>
-					<div class="msg2">
-					   <%=error_msg%>
-					  </div>
-          <% } %>  
-        <div class="agileits-top">
-
-    <form id="myfrom3" action="/" method="post">
-      <input type="text" name="name" placeholder="Search By Username For visit" onkeyup="showResult(this.value)"/>
-      <p>Suggestions: <span id="txtHint"></span></p>
-      <input type="submit" value="GO">
-     </form> 
-  </div>
-</div>
-<ul class="colorlib-bubbles">
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-    </ul>
-</div>
+    
+    
     <script>
 
         // ---------Responsive-navbar-active-animation-----------
@@ -111,42 +121,6 @@ $(window).on('resize', function(){
 $(".navbar-toggler").click(function(){
   setTimeout(function(){ test(); });
 });
-
-function showResult(str) {
-//console.log(str);
- if (str.length == 0) { 
-    document.getElementById("txtHint").innerHTML = "";
-    return;
-  }
-
-var xmlHttp = null;
-xmlHttp = new XMLHttpRequest();
-xmlHttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-    var txt=JSON.parse(this.responseText);
-    var result="";
-   // console.log(txt.data);
-   if(txt.data.length==0) 
-   {
-       result="No user available";
-   }
-   
-    for(var i=0;i<txt.data.length;i++)
-    {
-        if(i!=txt.data.length-1)
-        result+=txt.data[i]['username']+' , ';
-        else result +=txt.data[i]['username'];
-    }
-   // console.log(result);
-    
-      document.getElementById("txtHint").innerHTML =
-      result;
-    }
-  };
-xmlHttp.open( "GET", "/admin/users?search="+str, true );
-xmlHttp.send( null );
-
-}
     </script>
     
 </body>

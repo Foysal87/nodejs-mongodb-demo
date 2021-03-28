@@ -157,6 +157,14 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     background-size: cover;
     padding : 1em;
   }
+  .main-agileinfo3 {
+    width: 50%;
+    margin: 3em auto;
+    background: rgba(0, 5, 43, 0.884);
+    background-size: cover;
+    padding : 1em;
+  }
+
   .main-agileinfo h1
   {
     font-size: 2em;
@@ -171,9 +179,15 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   .agileits-top {
     padding: 3em;
   }
+  .agileits-top3 {
+    padding-left: 3em;
+    padding-right: 3em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
   
   
-  input[type="text"], input[type="email"], input[type="password"] {
+  input[type="text"],input[type="number"],input[type="email"], input[type="password"] {
     font-size: 0.9em;
     color: #fff;
     font-weight: 100;
@@ -193,6 +207,16 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     color: #fff;
     font-family: 'Roboto', sans-serif;
   }
+  .lab
+  {
+    font-size: 0.9em;
+    color: #fff;
+    font-weight: 100;
+    border: none;
+    padding: 0.2em;
+    margin: 0.6em 0;
+  }
+
   .input1 {
     margin :2em 0;
   }

@@ -19,6 +19,30 @@ var userSchema =new mongoose.Schema({
     password :{
         type : String,
         required : true
+    },
+    class_8:{
+        type : Array,
+        "default" : []
+    },
+    class_9:{
+        type : Array,
+        "default" : []
+    },
+    class_10:{
+        type : Array,
+        "default" : []
+    },
+    class_8_details:{
+        type : String
+    },
+    class_9_details:{
+        type : String
+    },
+    class_10_details:{
+        type : String
+    },
+    overall_details:{
+        type : String
     }
 
 });

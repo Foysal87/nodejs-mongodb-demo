@@ -1,7 +1,7 @@
 const express =require('express');
-
-var router =express.Router();
 const mongoose =require('mongoose');
+const DetailsUser = mongoose.model('Details');
+var router =express.Router();
 const User = mongoose.model('User');
 var bcrypt = require('bcryptjs');
 const passport =require('passport');
@@ -56,12 +56,30 @@ router.post('/login',(req,res,next) => {
       })(req, res, next);
   });
 
+  function init_details()
+  {
+    var details=DetailsUser();
+    details.user_id= Math.random().toString(36).substring(9);
+    details.save((err,doc) => {
+        if(err)
+        {
+            throw err;
+        }
+    });
+    return details.user_id;
+  }
+
 function insertRecord(req,res){
     var user =new User();
     user.email=req.body.email;
     user.fullname=req.body.fullname;
     user.username=req.body.username;
     user.password=req.body.password;
+    user.class_8_details=init_details();
+    user.class_9_details=init_details();
+    user.class_10_details=init_details();
+    user.overall_details=init_details();
+
     if(user.password!=req.body.conpassword)
     {
         var passwordError= 'Password not matched';

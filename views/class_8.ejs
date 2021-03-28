@@ -14,6 +14,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="/register.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/table_show.css" rel="stylesheet" type="text/css" media="all" />
+
 <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600,700&display=swap" rel="stylesheet">
 </head>
@@ -35,38 +37,89 @@
             </ul>
         </div>
     </nav>
-
-    <div class="main-w3layouts wrapper">
-        <% if(success_msg!=''){ %>
-		<div class="main-agileinfo" style="padding:1em;">
-		
-            <div class="msg">
-                <strong>Hello 
-                <%
-                if(Uusername!=''){ %>
-                    <%=Uusername%>
-                    <%
-                }
-                %>  
-                !  
-                </strong>
-               <%=success_msg%>
-			  </div>
-            <% } %>  
+    <div class="warpper1">
+        <div class="main-agileinfo3" style="padding: 1em;">
+            <% if( success_msg!=''){ %>
+				<div class="msg">
+				   <%=success_msg%>
+				  </div>
+				<% } %>   
+				<% if( error_msg!=''){ %>
+					<div class="msg2">
+					   <%=error_msg%>
+					  </div>
+					<% } %> 
+			<% if(typeof message!='undefined'){ %>
+				<div class="msg2">
+				   <%=message %>
+				  </div>
+				<% } %> 
+        <h1>Class_8</h1>
+        <div class="agileits-top3">
+        <form id="student_create" action="/profile/student_management/class_8/create_new" method="post" autocomplete="off">
+            <input value="CREATE NEW STUDENT" type="submit" />
+        </form>
         </div>
-      </div>
 
-      <div class="main-w3layouts wrapper">
-        <div class="main-agileinfo">
-          <h1>Types</h1>
-          <div class="agileits-top">
-            <form id="student_management" action="/profile/student_management" method="post" autocomplete="off">
-              <input type="submit" value="STUDENT MANAGEMENT"> 
-            </form>
-            
+    </div>
+        <input class="radio" id="one" name="group" type="radio" checked>
+        <input class="radio" id="two" name="group" type="radio">
+        <div class="tabs">
+        <label class="tab" id="one-tab" for="one">Student List</label>
+        <label class="tab" id="two-tab" for="two">Details</label>
           </div>
-          </div>
-      </div>
+        <div class="panels">
+        <div class="panel" id="one-panel">
+
+                    <h1>STUDENT LIST IN CLASS 8</h1>
+                    <table id="contesttable">
+                        <tr>
+                          <th>FullName</th>
+                          <th>Average Marks</th>
+                          <th>Taught Days</th>
+                          <th>Earnings</th>
+                          <th>Subjects</th>
+                          <th>Edit Link</th>
+                          <th>Delete Link</th>
+                        </tr>
+                        
+                        <% 
+                        if ( typeof student_list!='undefined') {
+                            
+                            for(var i=0;i<student_list.length;i++) {
+                              %>
+                        <tr class="tr_running">
+                            <td><%=student_list[i].fullname%></td>
+                            <td><%=student_list[i].average_marks%></td>
+                            <td><%=student_list[i].taught_days%></td>
+                            <td><%=student_list[i].earnings%></td>
+                            <% var sub=""; 
+                            for(var j=0;j<student_list[i].subjects.length;j++)
+                            {
+                                sub+=student_list[i].subjects[j]+" ";
+                                console.log(sub);
+                            }
+                            %>
+                            
+                            <td><%=sub%></td>
+                            <td> <form id="myform6" action="/profile/student_management/class_8/<%=student_list[i].username%>/edit" method="post">
+                                <input type="submit" value="Edit">
+                               </form> 
+                            </td>
+                            <td> <form id="myform6" action="/profile/student_management/class_8/<%=student_list[i].username%>/delete" method="post">
+                                <input type="submit" value="Delete">
+                               </form> 
+                            </td>
+
+                          </tr>
+                          <%
+                        }
+                    }
+                          %>
+                    </table>
+
+
+
       
 		<ul class="colorlib-bubbles">
 			<li></li>
@@ -86,6 +139,7 @@
     
     
     <script>
+
         // ---------Responsive-navbar-active-animation-----------
 function test(){
   var tabsNewAnim = $('#navbarSupportedContent');
